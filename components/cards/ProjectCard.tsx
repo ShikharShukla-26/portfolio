@@ -47,7 +47,11 @@ export function ProjectCard({ project }: ProjectCardProps) {
               arrow_forward
             </span>
           </a>
-        ) : null}
+        ) : (
+          <span className="shrink-0 text-label-md text-on-surface-variant">
+            Private Client Project
+          </span>
+        )}
       </div>
     </div>
   );
