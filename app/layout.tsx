@@ -17,6 +17,11 @@ export const metadata: Metadata = {
   title: "Shikhar Shukla | Developer & Researcher",
   description:
     "Portfolio of Shikhar Shukla — Full Stack Developer & Behavioral Product Researcher",
+  icons: {
+    icon: "/icon.svg",
+    shortcut: "/icon.svg",
+    apple: "/icon.svg",
+  },
 };
 
 export default function RootLayout({
