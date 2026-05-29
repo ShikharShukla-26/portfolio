@@ -1,3 +1,4 @@
+import { SocialBrandIcon } from "@/components/ui/SocialBrandIcon";
 import type { SiteContentPayload } from "@/lib/validations";
 
 type FooterProps = {
@@ -16,11 +17,12 @@ export function Footer({ content }: FooterProps) {
           {content.socialLinks.map((link) => (
             <a
               key={`${link.label}-${link.sortOrder}`}
-              className="text-label-sm text-on-surface-variant underline decoration-outline-variant transition-all opacity-80 hover:text-on-surface hover:opacity-100"
+              className="flex items-center gap-2 text-label-sm text-on-surface-variant underline decoration-outline-variant transition-all opacity-80 hover:text-on-surface hover:opacity-100"
               href={link.url}
               rel="noopener noreferrer"
               target="_blank"
             >
+              <SocialBrandIcon label={link.label} url={link.url} size={16} />
               {link.label}
             </a>
           ))}

@@ -307,7 +307,12 @@ export function DashboardEditor({ initialContent }: DashboardEditorProps) {
                   </div>
                   <Field label="Label" value={link.label} onChange={(v) => updateSocial(index, "label", v)} />
                   <Field label="URL" value={link.url} onChange={(v) => updateSocial(index, "url", v)} />
-                  <Field label="Material Icon" value={link.icon} onChange={(v) => updateSocial(index, "icon", v)} />
+                  <Field
+                    label="Icon key (optional)"
+                    value={link.icon}
+                    onChange={(v) => updateSocial(index, "icon", v)}
+                    hint="Display uses brand logo from Label/URL; this field is kept for compatibility."
+                  />
                 </div>
               ))}
             </div>
@@ -443,11 +448,13 @@ function Field({
   value,
   onChange,
   multiline,
+  hint,
 }: {
   label: string;
   value: string;
   onChange: (value: string) => void;
   multiline?: boolean;
+  hint?: string;
 }) {
   const className =
     "w-full rounded-DEFAULT border border-outline bg-surface-container px-3 py-2 text-body-md text-on-surface outline-none focus:border-primary-container";
@@ -455,6 +462,7 @@ function Field({
   return (
     <label className="block space-y-1">
       <span className="text-label-sm text-on-surface-variant">{label}</span>
+      {hint && <span className="block text-body-sm text-on-surface-variant/80">{hint}</span>}
       {multiline ? (
         <textarea className={`${className} min-h-[100px]`} value={value} onChange={(e) => onChange(e.target.value)} />
       ) : (

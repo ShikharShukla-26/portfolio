@@ -86,22 +86,28 @@
       "sortOrder": 0
     },
     {
+      "label": "GitHub",
+      "url": "https://github.com/ShikharShukla-26",
+      "icon": "code",
+      "sortOrder": 1
+    },
+    {
       "label": "Twitter",
       "url": "https://x.com/_JUSTcasually_",
       "icon": "chat",
-      "sortOrder": 1
+      "sortOrder": 2
     },
     {
       "label": "Email",
       "url": "mailto:shikharshukla678@gmail.com",
       "icon": "mail",
-      "sortOrder": 2
+      "sortOrder": 3
     },
     {
       "label": "Substack",
       "url": "https://shikharshukla26.substack.com",
       "icon": "article",
-      "sortOrder": 3
+      "sortOrder": 4
     }
   ]
 }

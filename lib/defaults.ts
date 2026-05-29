@@ -73,8 +73,9 @@ export const defaultSiteContent: SiteContentPayload = {
   ],
   socialLinks: [
     { label: "LinkedIn", url: "https://linkedin.com", icon: "link", sortOrder: 0 },
-    { label: "Twitter", url: "https://twitter.com", icon: "chat", sortOrder: 1 },
-    { label: "Email", url: "mailto:hello@example.com", icon: "mail", sortOrder: 2 },
-    { label: "Substack", url: "#", icon: "article", sortOrder: 3 },
+    { label: "GitHub", url: "https://github.com/ShikharShukla-26", icon: "code", sortOrder: 1 },
+    { label: "Twitter", url: "https://twitter.com", icon: "chat", sortOrder: 2 },
+    { label: "Email", url: "mailto:hello@example.com", icon: "mail", sortOrder: 3 },
+    { label: "Substack", url: "#", icon: "article", sortOrder: 4 },
   ],
 };

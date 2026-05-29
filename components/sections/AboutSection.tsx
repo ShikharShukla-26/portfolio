@@ -1,5 +1,6 @@
 import Image from "next/image";
 
+import { SocialBrandIcon } from "@/components/ui/SocialBrandIcon";
 import type { SiteContentPayload } from "@/lib/validations";
 
 type AboutSectionProps = {
@@ -50,7 +51,7 @@ export function AboutSection({ content }: AboutSectionProps) {
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                <span className="material-symbols-outlined">{link.icon}</span>
+                <SocialBrandIcon label={link.label} url={link.url} />
                 {link.label}
               </a>
             ))}
