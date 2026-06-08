@@ -17,7 +17,7 @@ export default async function HomePage() {
       <main className="mx-auto max-w-[1200px] px-margin-mobile pb-unit-xl pt-[120px] md:px-margin-desktop">
         <Hero content={content.site} />
         <EngineeringWork projects={content.engineeringProjects} />
-        <ThinkingSection items={content.thinkingItems} />
+        <ThinkingSection items={content.thinkingItems} substackUrl={content.site.substackUrl} />
         <AboutSection content={content} />
       </main>
       <Footer content={content} />
