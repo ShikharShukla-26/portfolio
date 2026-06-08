@@ -66,27 +66,27 @@
   ],
   "thinkingItems": [
     {
-      "title": "\"YouTube Is Not Your Problem. Tomorrow Is.\"",
-      "description": "First-person account of why I use YouTube to escape thinking about tomorrow — and what happens when I finally noticed.",
-      "linkUrl": "https://shikharshukla26.substack.com/p/youtube-is-not-your-problem-tomorrow",
+      "title": "\"I Thought I Was Interested In Self-Knowledge.\"",
+      "description": "I started observing YouTube to understand myself. I ended up discovering what actually holds my attention.",
+      "linkUrl": "https://substack.com/@shikharshukla3/note/p-200973374",
       "sortOrder": 0
-    },
-    {
-      "title": "\"How YouTube Controls Your Thinking Before You Notice.\"",
-      "description": "A breakdown of 7 design mechanisms YouTube uses to keep you scrolling — observed from the inside.",
-      "linkUrl": "https://shikharshukla26.substack.com/p/how-youtube-controls-your-thinking",
-      "sortOrder": 1
     },
     {
       "title": "\"The Day YouTube Stopped Choosing For Me.\"",
       "description": "I thought I was testing YouTube's algorithm. The experiment ended up testing me.",
       "linkUrl": "https://substack.com/@shikharshukla3/note/p-199864694",
+      "sortOrder": 1
+    },
+    {
+      "title": "\"How YouTube Controls Your Thinking Before You Notice.\"",
+      "description": "A breakdown of 7 design mechanisms YouTube uses to keep you scrolling — observed from the inside.",
+      "linkUrl": "https://shikharshukla26.substack.com/p/how-youtube-controls-your-thinking",
       "sortOrder": 2
     },
     {
-      "title": "\"I Thought I Was Interested In Self-Knowledge.\"",
-      "description": "I started observing YouTube to understand myself. I ended up discovering what actually holds my attention.",
-      "linkUrl": "https://substack.com/@shikharshukla3/note/p-200973374",
+      "title": "\"YouTube Is Not Your Problem. Tomorrow Is.\"",
+      "description": "First-person account of why I use YouTube to escape thinking about tomorrow — and what happens when I finally noticed.",
+      "linkUrl": "https://shikharshukla26.substack.com/p/youtube-is-not-your-problem-tomorrow",
       "sortOrder": 3
     }
   ],
