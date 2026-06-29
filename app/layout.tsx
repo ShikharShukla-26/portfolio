@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 
+import "@material-symbols/font-400/outlined.css";
+
 import "./globals.css";
 
 const geistSans = Geist({
@@ -31,13 +33,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable} dark`}>
-      <head>
-        {/* eslint-disable-next-line @next/next/no-page-custom-font -- App Router root layout; Material Symbols not in next/font */}
-        <link
-          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=optional"
-          rel="stylesheet"
-        />
-      </head>
       <body className="noise-bg min-h-screen antialiased">{children}</body>
     </html>
   );

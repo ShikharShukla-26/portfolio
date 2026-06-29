@@ -10,6 +10,7 @@
     "auth:hash": "tsx scripts/hash-password.ts"
   },
   "dependencies": {
+    "@material-symbols/font-400": "^0.45.4",
     "bcryptjs": "^3.0.3",
     "next": "16.2.6",
     "next-auth": "^5.0.0-beta.31",
