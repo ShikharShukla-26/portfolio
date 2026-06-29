@@ -26,6 +26,10 @@ export async function updateSiteContent(payload: SiteContentPayload): Promise<vo
       ...item,
       sortOrder: index,
     })),
+    caseStudies: payload.caseStudies.map((study, index) => ({
+      ...study,
+      sortOrder: index,
+    })),
     socialLinks: payload.socialLinks.map((link, index) => ({
       ...link,
       sortOrder: index,

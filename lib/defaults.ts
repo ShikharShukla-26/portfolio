@@ -3,14 +3,14 @@ import type { SiteContentPayload } from "@/lib/validations";
 export const defaultSiteContent: SiteContentPayload = {
   site: {
     heroName: "Shikhar Shukla",
-    heroSubtitle: "Full Stack Developer & Behavioral Product Researcher",
+    heroSubtitle: "Full Stack Developer | People Research & Talent Acquisition | Behavioral Writer at Substack",
     heroQuote:
-      "I build products and study why people use them the way they do.",
+      "I become curious whenever reality quietly stops matching the explanation everyone is still using.",
     contactEmail: "hello@example.com",
     substackUrl: "#",
     aboutTitle: "About Shikhar",
     aboutBody:
-      "I'm a full stack developer who got curious about why people use products the way they do. I build web applications for clients across USA, UK and Canada. On the side I write about human behavior and technology — mostly by observing myself making the same mistakes repeatedly.",
+      "I'm a full stack developer based in Vadodara, India, with 1.5 years of experience building production applications for international clients across the UK, Canada, USA, and the Netherlands.\n\nBut the part of the work I keep returning to is the conversation before the build — the requirement-gathering call, the moment when what a client says they need and what they actually need start to diverge. Finding that gap, and naming it clearly, is where I do my best work.\n\nOn the side, I research and write about behavioral psychology — specifically the moment when accepted explanations stop matching what people actually do. I publish long-form behavioral essays on Substack and conduct qualitative case studies on organizational behavior and product adoption.\n\nI'm currently exploring roles in Technical Recruitment and Behavioral Research, where understanding people's real motivations is the core of the work — not a side effect of it.",
     footerTagline: "© 2024 Shikhar Shukla. Built for performance.",
   },
   engineeringProjects: [
@@ -53,6 +53,17 @@ export const defaultSiteContent: SiteContentPayload = {
       icon: "medical_services",
       projectUrl: "#",
       sortOrder: 3,
+    },
+  ],
+  caseStudies: [
+    {
+      title: "Why Divide-and-Conquer Policies Backfire",
+      subtitle: "A Workplace Ethnography",
+      description:
+        "A three-month insider ethnography documenting how control-based workplace policies produced behavioral outcomes opposite to their intended effect. Includes the Control-Trust-Output Loop framework, boundary condition analysis, testable hypotheses, and consulting recommendations.",
+      downloadUrl: "/assets/behaveor_research/Shikhar_BehavioralCaseStudy_SurfaceCompliance.docx",
+      downloadLabel: "Download Case Study",
+      sortOrder: 0,
     },
   ],
   thinkingItems: [

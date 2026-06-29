@@ -9,10 +9,10 @@ type ThinkingSectionProps = {
 
 export function ThinkingSection({ items, substackUrl }: ThinkingSectionProps) {
   return (
-    <section className="py-unit-xl" id="research">
+    <section className="py-unit-xl" id="writing">
       <div className="mb-unit-lg">
         <div className="flex flex-wrap items-center gap-4">
-          <h2 className="text-headline-md text-on-surface">How I think about products</h2>
+          <h2 className="text-headline-md text-on-surface">Research & Writing</h2>
           <div className="hidden h-px min-w-[2rem] flex-grow bg-outline opacity-50 sm:block" />
           <a
             className="flex shrink-0 items-center gap-2 rounded-DEFAULT border border-outline bg-transparent px-4 py-2 text-label-sm text-on-surface transition-all hover:border-on-surface hover:bg-surface"

@@ -3,6 +3,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { AboutSection } from "@/components/sections/AboutSection";
 import { EngineeringWork } from "@/components/sections/EngineeringWork";
 import { Hero } from "@/components/sections/Hero";
+import { ResearchCaseStudiesSection } from "@/components/sections/ResearchCaseStudiesSection";
 import { ThinkingSection } from "@/components/sections/ThinkingSection";
 import { getSiteContent } from "@/lib/content";
 
@@ -17,6 +18,7 @@ export default async function HomePage() {
       <main className="mx-auto max-w-[1200px] px-margin-mobile pb-unit-xl pt-[120px] md:px-margin-desktop">
         <Hero content={content.site} />
         <EngineeringWork projects={content.engineeringProjects} />
+        <ResearchCaseStudiesSection items={content.caseStudies} />
         <ThinkingSection items={content.thinkingItems} substackUrl={content.site.substackUrl} />
         <AboutSection content={content} />
       </main>

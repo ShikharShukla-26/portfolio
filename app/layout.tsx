@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Shikhar Shukla | Developer & Researcher",
   description:
-    "Portfolio of Shikhar Shukla — Full Stack Developer & Behavioral Product Researcher",
+    "Portfolio of Shikhar Shukla — Full Stack Developer, People Research & Talent Acquisition, Behavioral Writer at Substack",
   icons: {
     icon: "/icon.svg",
     shortcut: "/icon.svg",
@@ -31,6 +31,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable} dark`}>
+      <head>
+        {/* eslint-disable-next-line @next/next/no-page-custom-font -- App Router root layout; Material Symbols not in next/font */}
+        <link
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=optional"
+          rel="stylesheet"
+        />
+      </head>
       <body className="noise-bg min-h-screen antialiased">{children}</body>
     </html>
   );

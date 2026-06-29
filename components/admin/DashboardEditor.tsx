@@ -10,7 +10,7 @@ type DashboardEditorProps = {
   initialContent: SiteContentPayload;
 };
 
-type SectionKey = "hero" | "projects" | "thinking" | "about" | "social" | "footer";
+type SectionKey = "hero" | "projects" | "caseStudies" | "thinking" | "about" | "social" | "footer";
 
 const emptyProject = (): SiteContentPayload["engineeringProjects"][number] => ({
   title: "",
@@ -26,6 +26,15 @@ const emptyThinking = (): SiteContentPayload["thinkingItems"][number] => ({
   title: "",
   description: "",
   linkUrl: "#",
+  sortOrder: 0,
+});
+
+const emptyCaseStudy = (): SiteContentPayload["caseStudies"][number] => ({
+  title: "",
+  subtitle: "",
+  description: "",
+  downloadUrl: "#",
+  downloadLabel: "Download Case Study",
   sortOrder: 0,
 });
 
@@ -57,6 +66,7 @@ export function DashboardEditor({ initialContent }: DashboardEditorProps) {
         tags: p.tags.map((tag) => tag.trim()).filter(Boolean),
       })),
       thinkingItems: content.thinkingItems.map((t, i) => ({ ...t, sortOrder: i })),
+      caseStudies: content.caseStudies.map((s, i) => ({ ...s, sortOrder: i })),
       socialLinks: content.socialLinks.map((s, i) => ({ ...s, sortOrder: i })),
     };
 
@@ -89,7 +99,8 @@ export function DashboardEditor({ initialContent }: DashboardEditorProps) {
   const sections: { key: SectionKey; label: string }[] = [
     { key: "hero", label: "Hero" },
     { key: "projects", label: "Engineering Work" },
-    { key: "thinking", label: "How I Think" },
+    { key: "caseStudies", label: "Case Studies" },
+    { key: "thinking", label: "Research & Writing" },
     { key: "about", label: "About" },
     { key: "social", label: "Social Links" },
     { key: "footer", label: "Footer" },
@@ -210,10 +221,62 @@ export function DashboardEditor({ initialContent }: DashboardEditorProps) {
             </div>
           )}
 
+          {activeSection === "caseStudies" && (
+            <div className="space-y-6">
+              <div className="flex items-center justify-between">
+                <h2 className="text-headline-md">Research & Case Studies</h2>
+                <button
+                  type="button"
+                  disabled={content.caseStudies.length >= MAX_ITEMS}
+                  className="rounded-DEFAULT bg-primary-container px-3 py-1.5 text-label-sm text-white disabled:opacity-40"
+                  onClick={() =>
+                    setContent((c) => ({
+                      ...c,
+                      caseStudies: [...c.caseStudies, emptyCaseStudy()],
+                    }))
+                  }
+                >
+                  Add Case Study ({content.caseStudies.length}/{MAX_ITEMS})
+                </button>
+              </div>
+              <p className="text-label-sm text-on-surface-variant">Use Position to change item order manually.</p>
+              {content.caseStudies.map((study, index) => (
+                <div key={index} className="space-y-3 rounded-DEFAULT border border-outline p-4">
+                  <div className="flex justify-between">
+                    <h3 className="text-label-md font-semibold">Case Study {index + 1}</h3>
+                    <button
+                      type="button"
+                      className="text-label-sm text-error"
+                      onClick={() =>
+                        setContent((c) => ({
+                          ...c,
+                          caseStudies: c.caseStudies.filter((_, i) => i !== index),
+                        }))
+                      }
+                    >
+                      Remove
+                    </button>
+                  </div>
+                  <IndexField
+                    label="Position"
+                    value={index}
+                    max={content.caseStudies.length}
+                    onChange={(nextIndex) => moveCaseStudyToIndex(index, nextIndex)}
+                  />
+                  <Field label="Title" value={study.title} onChange={(v) => updateCaseStudy(index, "title", v)} />
+                  <Field label="Subtitle" value={study.subtitle ?? ""} onChange={(v) => updateCaseStudy(index, "subtitle", v)} />
+                  <Field label="Description" value={study.description} onChange={(v) => updateCaseStudy(index, "description", v)} multiline />
+                  <Field label="Download URL" value={study.downloadUrl} onChange={(v) => updateCaseStudy(index, "downloadUrl", v)} />
+                  <Field label="Download Label" value={study.downloadLabel ?? ""} onChange={(v) => updateCaseStudy(index, "downloadLabel", v)} />
+                </div>
+              ))}
+            </div>
+          )}
+
           {activeSection === "thinking" && (
             <div className="space-y-6">
               <div className="flex items-center justify-between">
-                <h2 className="text-headline-md">How I think about products</h2>
+                <h2 className="text-headline-md">Research & Writing</h2>
                 <button
                   type="button"
                   disabled={content.thinkingItems.length >= MAX_ITEMS}
@@ -369,6 +432,18 @@ export function DashboardEditor({ initialContent }: DashboardEditorProps) {
     });
   }
 
+  function updateCaseStudy(
+    index: number,
+    key: keyof SiteContentPayload["caseStudies"][number],
+    value: string,
+  ) {
+    setContent((c) => {
+      const studies = [...c.caseStudies];
+      studies[index] = { ...studies[index], [key]: value };
+      return { ...c, caseStudies: studies };
+    });
+  }
+
   function updateSocial(
     index: number,
     key: keyof SiteContentPayload["socialLinks"][number],
@@ -400,6 +475,17 @@ export function DashboardEditor({ initialContent }: DashboardEditorProps) {
     setContent((c) => ({
       ...c,
       thinkingItems: reorderItems(c.thinkingItems, currentIndex, nextIndex),
+    }));
+  }
+
+  function moveCaseStudyToIndex(currentIndex: number, nextIndex: number) {
+    if (currentIndex === nextIndex) {
+      return;
+    }
+
+    setContent((c) => ({
+      ...c,
+      caseStudies: reorderItems(c.caseStudies, currentIndex, nextIndex),
     }));
   }
 }

@@ -21,6 +21,16 @@ export const thinkingItemSchema = z.object({
   sortOrder: z.number().int().min(0),
 });
 
+export const caseStudySchema = z.object({
+  id: z.number().optional(),
+  title: z.string().min(1, "Title is required"),
+  subtitle: z.string().optional(),
+  description: z.string().min(1, "Description is required"),
+  downloadUrl: z.string().min(1, "Download URL is required"),
+  downloadLabel: z.string().optional(),
+  sortOrder: z.number().int().min(0),
+});
+
 export const socialLinkSchema = z.object({
   id: z.number().optional(),
   label: z.string().min(1, "Label is required"),
@@ -48,12 +58,16 @@ export const siteContentPayloadSchema = z.object({
   thinkingItems: z
     .array(thinkingItemSchema)
     .max(maxItems, `Maximum ${maxItems} thinking items allowed`),
+  caseStudies: z
+    .array(caseStudySchema)
+    .max(maxItems, `Maximum ${maxItems} case studies allowed`),
   socialLinks: z.array(socialLinkSchema).max(10),
 });
 
 export type SiteContentPayload = z.infer<typeof siteContentPayloadSchema>;
 export type EngineeringProjectInput = z.infer<typeof engineeringProjectSchema>;
 export type ThinkingItemInput = z.infer<typeof thinkingItemSchema>;
+export type CaseStudyInput = z.infer<typeof caseStudySchema>;
 export type SocialLinkInput = z.infer<typeof socialLinkSchema>;
 
 export const MAX_ITEMS = maxItems;
