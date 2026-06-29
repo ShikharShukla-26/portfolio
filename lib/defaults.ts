@@ -60,7 +60,7 @@ export const defaultSiteContent: SiteContentPayload = {
       title: "Why Divide-and-Conquer Policies Backfire",
       subtitle: "A Workplace Ethnography",
       description:
-        "A three-month insider ethnography documenting how control-based workplace policies produced behavioral outcomes opposite to their intended effect. Includes the Control-Trust-Output Loop framework, boundary condition analysis, testable hypotheses, and consulting recommendations.",
+        "A six-month insider ethnography documenting how control-based workplace policies produced behavioral outcomes opposite to their intended effect. Includes the Control-Trust-Output Loop framework, boundary condition analysis, testable hypotheses, and consulting recommendations.",
       downloadUrl: "/assets/behaveor_research/Shikhar_BehavioralCaseStudy_SurfaceCompliance.docx",
       downloadLabel: "Download Case Study",
       sortOrder: 0,
